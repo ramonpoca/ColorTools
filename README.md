@@ -9,6 +9,8 @@ copy to your ~/Library/Colors directory and use from the standard color picker.
 * Supports RGB/CMYK and Gray colorspaces (Lab values will show black).
 * Right now it ignores groups in the ASE file.
 
+Info about Adobe Swatch Exchange files from: 
+http://www.selapa.net/swatches/colors/fileformats.php#adobe_ase
 
 (c) Ramon Poca 2014 
 
