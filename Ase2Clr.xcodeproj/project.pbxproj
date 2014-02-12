@@ -10,6 +10,9 @@
 		F6A33F7618AB855F00DF400D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A33F7518AB855F00DF400D /* Foundation.framework */; };
 		F6A33F7918AB855F00DF400D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F7818AB855F00DF400D /* main.m */; };
 		F6A33F7D18AB855F00DF400D /* Ase2Clr.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F6A33F7C18AB855F00DF400D /* Ase2Clr.1 */; };
+		F6A33F8518AB85A000DF400D /* RPCAdobeSwatchExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8418AB85A000DF400D /* RPCAdobeSwatchExchange.m */; };
+		F6A33F8818AB8FE300DF400D /* NSData+Bigendian.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8718AB8FE300DF400D /* NSData+Bigendian.m */; };
+		F6A33F8A18ABAD2E00DF400D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A33F8918ABAD2E00DF400D /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +34,11 @@
 		F6A33F7818AB855F00DF400D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F6A33F7B18AB855F00DF400D /* Ase2Clr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ase2Clr-Prefix.pch"; sourceTree = "<group>"; };
 		F6A33F7C18AB855F00DF400D /* Ase2Clr.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Ase2Clr.1; sourceTree = "<group>"; };
+		F6A33F8318AB85A000DF400D /* RPCAdobeSwatchExchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPCAdobeSwatchExchange.h; sourceTree = "<group>"; };
+		F6A33F8418AB85A000DF400D /* RPCAdobeSwatchExchange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCAdobeSwatchExchange.m; sourceTree = "<group>"; };
+		F6A33F8618AB8FE300DF400D /* NSData+Bigendian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Bigendian.h"; sourceTree = "<group>"; };
+		F6A33F8718AB8FE300DF400D /* NSData+Bigendian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Bigendian.m"; sourceTree = "<group>"; };
+		F6A33F8918ABAD2E00DF400D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A33F8A18ABAD2E00DF400D /* AppKit.framework in Frameworks */,
 				F6A33F7618AB855F00DF400D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +74,7 @@
 		F6A33F7418AB855F00DF400D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6A33F8918ABAD2E00DF400D /* AppKit.framework */,
 				F6A33F7518AB855F00DF400D /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -76,6 +86,10 @@
 				F6A33F7818AB855F00DF400D /* main.m */,
 				F6A33F7C18AB855F00DF400D /* Ase2Clr.1 */,
 				F6A33F7A18AB855F00DF400D /* Supporting Files */,
+				F6A33F8318AB85A000DF400D /* RPCAdobeSwatchExchange.h */,
+				F6A33F8418AB85A000DF400D /* RPCAdobeSwatchExchange.m */,
+				F6A33F8618AB8FE300DF400D /* NSData+Bigendian.h */,
+				F6A33F8718AB8FE300DF400D /* NSData+Bigendian.m */,
 			);
 			path = Ase2Clr;
 			sourceTree = "<group>";
@@ -139,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A33F8818AB8FE300DF400D /* NSData+Bigendian.m in Sources */,
+				F6A33F8518AB85A000DF400D /* RPCAdobeSwatchExchange.m in Sources */,
 				F6A33F7918AB855F00DF400D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +267,7 @@
 				F6A33F8218AB855F00DF400D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
