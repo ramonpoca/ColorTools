@@ -13,7 +13,35 @@
 		F6A33F8518AB85A000DF400D /* RPCAdobeSwatchExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8418AB85A000DF400D /* RPCAdobeSwatchExchange.m */; };
 		F6A33F8818AB8FE300DF400D /* NSData+Bigendian.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8718AB8FE300DF400D /* NSData+Bigendian.m */; };
 		F6A33F8A18ABAD2E00DF400D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A33F8918ABAD2E00DF400D /* AppKit.framework */; };
+		F6A33F9118ABCB1800DF400D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A33F9018ABCB1800DF400D /* Cocoa.framework */; };
+		F6A33F9B18ABCB1800DF400D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6A33F9918ABCB1800DF400D /* InfoPlist.strings */; };
+		F6A33F9D18ABCB1800DF400D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F9C18ABCB1800DF400D /* main.m */; };
+		F6A33FA118ABCB1800DF400D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F6A33F9F18ABCB1800DF400D /* Credits.rtf */; };
+		F6A33FA418ABCB1800DF400D /* RPCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33FA318ABCB1800DF400D /* RPCAppDelegate.m */; };
+		F6A33FA718ABCB1800DF400D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A33FA518ABCB1800DF400D /* MainMenu.xib */; };
+		F6A33FA918ABCB1800DF400D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6A33FA818ABCB1800DF400D /* Images.xcassets */; };
+		F6A33FB018ABCB1900DF400D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A33FAF18ABCB1900DF400D /* XCTest.framework */; };
+		F6A33FB118ABCB1900DF400D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A33F9018ABCB1800DF400D /* Cocoa.framework */; };
+		F6A33FB918ABCB1900DF400D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6A33FB718ABCB1900DF400D /* InfoPlist.strings */; };
+		F6A33FBB18ABCB1900DF400D /* SwatchInstallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33FBA18ABCB1900DF400D /* SwatchInstallTests.m */; };
+		F6CAB2A11906A3CC00DA9745 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A33F7518AB855F00DF400D /* Foundation.framework */; };
+		F6CAB2A41906A3CC00DA9745 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CAB2A31906A3CC00DA9745 /* main.m */; };
+		F6CAB2A81906A3CC00DA9745 /* Html2Clr.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F6CAB2A71906A3CC00DA9745 /* Html2Clr.1 */; };
+		F6CAB2AC1906A3E900DA9745 /* NSData+Bigendian.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8718AB8FE300DF400D /* NSData+Bigendian.m */; };
+		F6CAB2AD1906A3EC00DA9745 /* RPCAdobeSwatchExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8418AB85A000DF400D /* RPCAdobeSwatchExchange.m */; };
+		F6CAB2B01906A45600DA9745 /* RPCHexColorList.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CAB2AF1906A45600DA9745 /* RPCHexColorList.m */; };
+		F6CAB2B31906A7FF00DA9745 /* NSColor+Hexadecimal.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CAB2B21906A7FF00DA9745 /* NSColor+Hexadecimal.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F6A33FB218ABCB1900DF400D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6A33F6A18AB855F00DF400D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6A33F8E18ABCB1800DF400D;
+			remoteInfo = SwatchInstall;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F6A33F7018AB855F00DF400D /* CopyFiles */ = {
@@ -23,6 +51,16 @@
 			dstSubfolderSpec = 0;
 			files = (
 				F6A33F7D18AB855F00DF400D /* Ase2Clr.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		F6CAB29E1906A3CC00DA9745 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				F6CAB2A81906A3CC00DA9745 /* Html2Clr.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -39,6 +77,33 @@
 		F6A33F8618AB8FE300DF400D /* NSData+Bigendian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Bigendian.h"; sourceTree = "<group>"; };
 		F6A33F8718AB8FE300DF400D /* NSData+Bigendian.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Bigendian.m"; sourceTree = "<group>"; };
 		F6A33F8918ABAD2E00DF400D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F6A33F8F18ABCB1800DF400D /* SwatchInstall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwatchInstall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6A33F9018ABCB1800DF400D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F6A33F9318ABCB1800DF400D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F6A33F9418ABCB1800DF400D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F6A33F9518ABCB1800DF400D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F6A33F9818ABCB1800DF400D /* SwatchInstall-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwatchInstall-Info.plist"; sourceTree = "<group>"; };
+		F6A33F9A18ABCB1800DF400D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F6A33F9C18ABCB1800DF400D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F6A33F9E18ABCB1800DF400D /* SwatchInstall-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwatchInstall-Prefix.pch"; sourceTree = "<group>"; };
+		F6A33FA018ABCB1800DF400D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F6A33FA218ABCB1800DF400D /* RPCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPCAppDelegate.h; sourceTree = "<group>"; };
+		F6A33FA318ABCB1800DF400D /* RPCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPCAppDelegate.m; sourceTree = "<group>"; };
+		F6A33FA618ABCB1800DF400D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F6A33FA818ABCB1800DF400D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F6A33FAE18ABCB1900DF400D /* SwatchInstallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwatchInstallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6A33FAF18ABCB1900DF400D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F6A33FB618ABCB1900DF400D /* SwatchInstallTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwatchInstallTests-Info.plist"; sourceTree = "<group>"; };
+		F6A33FB818ABCB1900DF400D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F6A33FBA18ABCB1900DF400D /* SwatchInstallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwatchInstallTests.m; sourceTree = "<group>"; };
+		F6CAB2A01906A3CC00DA9745 /* Html2Clr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Html2Clr; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6CAB2A31906A3CC00DA9745 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F6CAB2A61906A3CC00DA9745 /* Html2Clr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Html2Clr-Prefix.pch"; sourceTree = "<group>"; };
+		F6CAB2A71906A3CC00DA9745 /* Html2Clr.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Html2Clr.1; sourceTree = "<group>"; };
+		F6CAB2AE1906A45600DA9745 /* RPCHexColorList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPCHexColorList.h; sourceTree = "<group>"; };
+		F6CAB2AF1906A45600DA9745 /* RPCHexColorList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCHexColorList.m; sourceTree = "<group>"; };
+		F6CAB2B11906A7FF00DA9745 /* NSColor+Hexadecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Hexadecimal.h"; sourceTree = "<group>"; };
+		F6CAB2B21906A7FF00DA9745 /* NSColor+Hexadecimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Hexadecimal.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +116,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6A33F8C18ABCB1800DF400D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6A33F9118ABCB1800DF400D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6A33FAB18ABCB1800DF400D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6A33FB118ABCB1900DF400D /* Cocoa.framework in Frameworks */,
+				F6A33FB018ABCB1900DF400D /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6CAB29D1906A3CC00DA9745 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6CAB2A11906A3CC00DA9745 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -58,6 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				F6A33F7718AB855F00DF400D /* Ase2Clr */,
+				F6A33F9618ABCB1800DF400D /* SwatchInstall */,
+				F6A33FB418ABCB1900DF400D /* SwatchInstallTests */,
+				F6CAB2A21906A3CC00DA9745 /* Html2Clr */,
 				F6A33F7418AB855F00DF400D /* Frameworks */,
 				F6A33F7318AB855F00DF400D /* Products */,
 			);
@@ -67,6 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				F6A33F7218AB855F00DF400D /* Ase2Clr */,
+				F6A33F8F18ABCB1800DF400D /* SwatchInstall.app */,
+				F6A33FAE18ABCB1900DF400D /* SwatchInstallTests.xctest */,
+				F6CAB2A01906A3CC00DA9745 /* Html2Clr */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +172,9 @@
 			children = (
 				F6A33F8918ABAD2E00DF400D /* AppKit.framework */,
 				F6A33F7518AB855F00DF400D /* Foundation.framework */,
+				F6A33F9018ABCB1800DF400D /* Cocoa.framework */,
+				F6A33FAF18ABCB1900DF400D /* XCTest.framework */,
+				F6A33F9218ABCB1800DF400D /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,6 +201,80 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F6A33F9218ABCB1800DF400D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6A33F9318ABCB1800DF400D /* AppKit.framework */,
+				F6A33F9418ABCB1800DF400D /* CoreData.framework */,
+				F6A33F9518ABCB1800DF400D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		F6A33F9618ABCB1800DF400D /* SwatchInstall */ = {
+			isa = PBXGroup;
+			children = (
+				F6A33FA218ABCB1800DF400D /* RPCAppDelegate.h */,
+				F6A33FA318ABCB1800DF400D /* RPCAppDelegate.m */,
+				F6A33FA518ABCB1800DF400D /* MainMenu.xib */,
+				F6A33FA818ABCB1800DF400D /* Images.xcassets */,
+				F6A33F9718ABCB1800DF400D /* Supporting Files */,
+			);
+			path = SwatchInstall;
+			sourceTree = "<group>";
+		};
+		F6A33F9718ABCB1800DF400D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6A33F9818ABCB1800DF400D /* SwatchInstall-Info.plist */,
+				F6A33F9918ABCB1800DF400D /* InfoPlist.strings */,
+				F6A33F9C18ABCB1800DF400D /* main.m */,
+				F6A33F9E18ABCB1800DF400D /* SwatchInstall-Prefix.pch */,
+				F6A33F9F18ABCB1800DF400D /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6A33FB418ABCB1900DF400D /* SwatchInstallTests */ = {
+			isa = PBXGroup;
+			children = (
+				F6A33FBA18ABCB1900DF400D /* SwatchInstallTests.m */,
+				F6A33FB518ABCB1900DF400D /* Supporting Files */,
+			);
+			path = SwatchInstallTests;
+			sourceTree = "<group>";
+		};
+		F6A33FB518ABCB1900DF400D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6A33FB618ABCB1900DF400D /* SwatchInstallTests-Info.plist */,
+				F6A33FB718ABCB1900DF400D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6CAB2A21906A3CC00DA9745 /* Html2Clr */ = {
+			isa = PBXGroup;
+			children = (
+				F6CAB2A31906A3CC00DA9745 /* main.m */,
+				F6CAB2A71906A3CC00DA9745 /* Html2Clr.1 */,
+				F6CAB2A51906A3CC00DA9745 /* Supporting Files */,
+				F6CAB2AE1906A45600DA9745 /* RPCHexColorList.h */,
+				F6CAB2AF1906A45600DA9745 /* RPCHexColorList.m */,
+				F6CAB2B11906A7FF00DA9745 /* NSColor+Hexadecimal.h */,
+				F6CAB2B21906A7FF00DA9745 /* NSColor+Hexadecimal.m */,
+			);
+			path = Html2Clr;
+			sourceTree = "<group>";
+		};
+		F6CAB2A51906A3CC00DA9745 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6CAB2A61906A3CC00DA9745 /* Html2Clr-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +295,58 @@
 			productReference = F6A33F7218AB855F00DF400D /* Ase2Clr */;
 			productType = "com.apple.product-type.tool";
 		};
+		F6A33F8E18ABCB1800DF400D /* SwatchInstall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6A33FC018ABCB1900DF400D /* Build configuration list for PBXNativeTarget "SwatchInstall" */;
+			buildPhases = (
+				F6A33F8B18ABCB1800DF400D /* Sources */,
+				F6A33F8C18ABCB1800DF400D /* Frameworks */,
+				F6A33F8D18ABCB1800DF400D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwatchInstall;
+			productName = SwatchInstall;
+			productReference = F6A33F8F18ABCB1800DF400D /* SwatchInstall.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F6A33FAD18ABCB1800DF400D /* SwatchInstallTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6A33FC118ABCB1900DF400D /* Build configuration list for PBXNativeTarget "SwatchInstallTests" */;
+			buildPhases = (
+				F6A33FAA18ABCB1800DF400D /* Sources */,
+				F6A33FAB18ABCB1800DF400D /* Frameworks */,
+				F6A33FAC18ABCB1800DF400D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6A33FB318ABCB1900DF400D /* PBXTargetDependency */,
+			);
+			name = SwatchInstallTests;
+			productName = SwatchInstallTests;
+			productReference = F6A33FAE18ABCB1900DF400D /* SwatchInstallTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F6CAB29F1906A3CC00DA9745 /* Html2Clr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6CAB2AB1906A3CC00DA9745 /* Build configuration list for PBXNativeTarget "Html2Clr" */;
+			buildPhases = (
+				F6CAB29C1906A3CC00DA9745 /* Sources */,
+				F6CAB29D1906A3CC00DA9745 /* Frameworks */,
+				F6CAB29E1906A3CC00DA9745 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Html2Clr;
+			productName = Html2Clr;
+			productReference = F6CAB2A01906A3CC00DA9745 /* Html2Clr */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -130,6 +355,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Ramon Poca";
+				TargetAttributes = {
+					F6A33FAD18ABCB1800DF400D = {
+						TestTargetID = F6A33F8E18ABCB1800DF400D;
+					};
+				};
 			};
 			buildConfigurationList = F6A33F6D18AB855F00DF400D /* Build configuration list for PBXProject "Ase2Clr" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -137,6 +367,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = F6A33F6918AB855F00DF400D;
 			productRefGroup = F6A33F7318AB855F00DF400D /* Products */;
@@ -144,9 +375,34 @@
 			projectRoot = "";
 			targets = (
 				F6A33F7118AB855F00DF400D /* Ase2Clr */,
+				F6CAB29F1906A3CC00DA9745 /* Html2Clr */,
+				F6A33F8E18ABCB1800DF400D /* SwatchInstall */,
+				F6A33FAD18ABCB1800DF400D /* SwatchInstallTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6A33F8D18ABCB1800DF400D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6A33F9B18ABCB1800DF400D /* InfoPlist.strings in Resources */,
+				F6A33FA918ABCB1800DF400D /* Images.xcassets in Resources */,
+				F6A33FA118ABCB1800DF400D /* Credits.rtf in Resources */,
+				F6A33FA718ABCB1800DF400D /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6A33FAC18ABCB1800DF400D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6A33FB918ABCB1900DF400D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F6A33F6E18AB855F00DF400D /* Sources */ = {
@@ -159,7 +415,79 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6A33F8B18ABCB1800DF400D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6A33FA418ABCB1800DF400D /* RPCAppDelegate.m in Sources */,
+				F6A33F9D18ABCB1800DF400D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6A33FAA18ABCB1800DF400D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6A33FBB18ABCB1900DF400D /* SwatchInstallTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6CAB29C1906A3CC00DA9745 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6CAB2A41906A3CC00DA9745 /* main.m in Sources */,
+				F6CAB2B01906A45600DA9745 /* RPCHexColorList.m in Sources */,
+				F6CAB2AC1906A3E900DA9745 /* NSData+Bigendian.m in Sources */,
+				F6CAB2AD1906A3EC00DA9745 /* RPCAdobeSwatchExchange.m in Sources */,
+				F6CAB2B31906A7FF00DA9745 /* NSColor+Hexadecimal.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F6A33FB318ABCB1900DF400D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6A33F8E18ABCB1800DF400D /* SwatchInstall */;
+			targetProxy = F6A33FB218ABCB1900DF400D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F6A33F9918ABCB1800DF400D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6A33F9A18ABCB1800DF400D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F6A33F9F18ABCB1800DF400D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6A33FA018ABCB1800DF400D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		F6A33FA518ABCB1800DF400D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6A33FA618ABCB1800DF400D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		F6A33FB718ABCB1900DF400D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6A33FB818ABCB1900DF400D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F6A33F7E18AB855F00DF400D /* Debug */ = {
@@ -248,6 +576,102 @@
 			};
 			name = Release;
 		};
+		F6A33FBC18ABCB1900DF400D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SwatchInstall/SwatchInstall-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SwatchInstall/SwatchInstall-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F6A33FBD18ABCB1900DF400D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SwatchInstall/SwatchInstall-Prefix.pch";
+				INFOPLIST_FILE = "SwatchInstall/SwatchInstall-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F6A33FBE18ABCB1900DF400D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SwatchInstall.app/Contents/MacOS/SwatchInstall";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SwatchInstall/SwatchInstall-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SwatchInstallTests/SwatchInstallTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F6A33FBF18ABCB1900DF400D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SwatchInstall.app/Contents/MacOS/SwatchInstall";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SwatchInstall/SwatchInstall-Prefix.pch";
+				INFOPLIST_FILE = "SwatchInstallTests/SwatchInstallTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		F6CAB2A91906A3CC00DA9745 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Html2Clr/Html2Clr-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F6CAB2AA1906A3CC00DA9745 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Html2Clr/Html2Clr-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -268,6 +692,32 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F6A33FC018ABCB1900DF400D /* Build configuration list for PBXNativeTarget "SwatchInstall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6A33FBC18ABCB1900DF400D /* Debug */,
+				F6A33FBD18ABCB1900DF400D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6A33FC118ABCB1900DF400D /* Build configuration list for PBXNativeTarget "SwatchInstallTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6A33FBE18ABCB1900DF400D /* Debug */,
+				F6A33FBF18ABCB1900DF400D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6CAB2AB1906A3CC00DA9745 /* Build configuration list for PBXNativeTarget "Html2Clr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6CAB2A91906A3CC00DA9745 /* Debug */,
+				F6CAB2AA1906A3CC00DA9745 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
