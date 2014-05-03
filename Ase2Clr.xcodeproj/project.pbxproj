@@ -31,6 +31,9 @@
 		F6CAB2AD1906A3EC00DA9745 /* RPCAdobeSwatchExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8418AB85A000DF400D /* RPCAdobeSwatchExchange.m */; };
 		F6CAB2B01906A45600DA9745 /* RPCHexColorList.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CAB2AF1906A45600DA9745 /* RPCHexColorList.m */; };
 		F6CAB2B31906A7FF00DA9745 /* NSColor+Hexadecimal.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CAB2B21906A7FF00DA9745 /* NSColor+Hexadecimal.m */; };
+		F6FEBF3C1914DE0300045FB9 /* RPCMainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FEBF3B1914DE0300045FB9 /* RPCMainWindow.m */; };
+		F6FEBF3D1914E73A00045FB9 /* RPCAdobeSwatchExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8418AB85A000DF400D /* RPCAdobeSwatchExchange.m */; };
+		F6FEBF3E1914E73A00045FB9 /* NSData+Bigendian.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8718AB8FE300DF400D /* NSData+Bigendian.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +107,8 @@
 		F6CAB2AF1906A45600DA9745 /* RPCHexColorList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCHexColorList.m; sourceTree = "<group>"; };
 		F6CAB2B11906A7FF00DA9745 /* NSColor+Hexadecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Hexadecimal.h"; sourceTree = "<group>"; };
 		F6CAB2B21906A7FF00DA9745 /* NSColor+Hexadecimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Hexadecimal.m"; sourceTree = "<group>"; };
+		F6FEBF3A1914DE0300045FB9 /* RPCMainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPCMainWindow.h; sourceTree = "<group>"; };
+		F6FEBF3B1914DE0300045FB9 /* RPCMainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPCMainWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +224,8 @@
 				F6A33FA518ABCB1800DF400D /* MainMenu.xib */,
 				F6A33FA818ABCB1800DF400D /* Images.xcassets */,
 				F6A33F9718ABCB1800DF400D /* Supporting Files */,
+				F6FEBF3A1914DE0300045FB9 /* RPCMainWindow.h */,
+				F6FEBF3B1914DE0300045FB9 /* RPCMainWindow.m */,
 			);
 			path = SwatchInstall;
 			sourceTree = "<group>";
@@ -419,6 +426,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6FEBF3D1914E73A00045FB9 /* RPCAdobeSwatchExchange.m in Sources */,
+				F6FEBF3E1914E73A00045FB9 /* NSData+Bigendian.m in Sources */,
+				F6FEBF3C1914DE0300045FB9 /* RPCMainWindow.m in Sources */,
 				F6A33FA418ABCB1800DF400D /* RPCAppDelegate.m in Sources */,
 				F6A33F9D18ABCB1800DF400D /* main.m in Sources */,
 			);
@@ -718,6 +728,7 @@
 				F6CAB2AA1906A3CC00DA9745 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

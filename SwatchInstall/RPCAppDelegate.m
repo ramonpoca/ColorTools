@@ -9,7 +9,6 @@
 #import "RPCAppDelegate.h"
 
 
-
 @implementation RPCAppDelegate
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
