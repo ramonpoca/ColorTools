@@ -86,15 +86,19 @@
         }
         UInt16 type = [[aseFileHandle readDataOfLength:2] bigEndianUInt16];
         if (name == nil || [name isEqualToString:@"\0"]) {
-            NSColor *convertedColor=[color colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
+            NSColor *convertedColor=[color colorUsingColorSpaceName:NSDeviceRGBColorSpace];
 
             NSString* hexString = [NSString stringWithFormat:@"#%02X%02X%02X",
                                    (int) (convertedColor.redComponent * 0xFF), (int) (convertedColor.greenComponent * 0xFF),
                                    (int) (convertedColor.blueComponent * 0xFF)];
             name = hexString;
         }
-        
-        
+        NSInteger i = 1;
+        NSString *fixedName = name;
+        while ([self.colors colorWithKey:fixedName]!=nil) {
+            fixedName = [name stringByAppendingString:[NSString stringWithFormat:@" %ld",i++]];
+        }
+        name = fixedName;
         self.colorNames = [self.colorNames arrayByAddingObject:name];
         self.colorList = [self.colorList arrayByAddingObject:color];
         if (self.colors)
