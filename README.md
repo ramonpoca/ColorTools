@@ -46,5 +46,4 @@ The usage is analog to Ase2Clr:
 ```
 
 
-(c) Ramon Poca 2014 
-
+(c) Ramon Poca 2014. MIT Licensed.
