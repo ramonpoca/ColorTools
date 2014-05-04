@@ -85,6 +85,16 @@
             color = [NSColor colorWithWhite:grey alpha:1.0];
         }
         UInt16 type = [[aseFileHandle readDataOfLength:2] bigEndianUInt16];
+        if (name == nil || [name isEqualToString:@"\0"]) {
+            NSColor *convertedColor=[color colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
+
+            NSString* hexString = [NSString stringWithFormat:@"#%02X%02X%02X",
+                                   (int) (convertedColor.redComponent * 0xFF), (int) (convertedColor.greenComponent * 0xFF),
+                                   (int) (convertedColor.blueComponent * 0xFF)];
+            name = hexString;
+        }
+        
+        
         self.colorNames = [self.colorNames arrayByAddingObject:name];
         self.colorList = [self.colorList arrayByAddingObject:color];
         if (self.colors)
@@ -98,5 +108,13 @@
 
 - (BOOL) writeToFile:(NSString *)path {
     return NO;
+}
+
+- (void)finalize {
+    self.colors = nil;
+    self.colorNames = nil;
+    self.colorGroups = nil;
+    self.colorList = nil;
+    [super finalize];
 }
 @end
