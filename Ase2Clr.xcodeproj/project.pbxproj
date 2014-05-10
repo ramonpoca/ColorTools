@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F62BC4F5191E73D70040FD69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A33F7518AB855F00DF400D /* Foundation.framework */; };
+		F62BC4F8191E73D70040FD69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F62BC4F7191E73D70040FD69 /* main.m */; };
+		F62BC4FC191E73D70040FD69 /* Clr2Ase.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F62BC4FB191E73D70040FD69 /* Clr2Ase.1 */; };
+		F62BC500191E845C0040FD69 /* RPCAdobeSwatchExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8418AB85A000DF400D /* RPCAdobeSwatchExchange.m */; };
+		F62BC501191E845C0040FD69 /* NSData+Bigendian.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8718AB8FE300DF400D /* NSData+Bigendian.m */; };
 		F6A33F7618AB855F00DF400D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A33F7518AB855F00DF400D /* Foundation.framework */; };
 		F6A33F7918AB855F00DF400D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F7818AB855F00DF400D /* main.m */; };
 		F6A33F7D18AB855F00DF400D /* Ase2Clr.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F6A33F7C18AB855F00DF400D /* Ase2Clr.1 */; };
@@ -47,6 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		F62BC4F2191E73D70040FD69 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				F62BC4FC191E73D70040FD69 /* Clr2Ase.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		F6A33F7018AB855F00DF400D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,6 +85,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F62BC4F4191E73D70040FD69 /* Clr2Ase */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Clr2Ase; sourceTree = BUILT_PRODUCTS_DIR; };
+		F62BC4F7191E73D70040FD69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F62BC4FA191E73D70040FD69 /* Clr2Ase-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Clr2Ase-Prefix.pch"; sourceTree = "<group>"; };
+		F62BC4FB191E73D70040FD69 /* Clr2Ase.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Clr2Ase.1; sourceTree = "<group>"; };
 		F6A33F7218AB855F00DF400D /* Ase2Clr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Ase2Clr; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A33F7518AB855F00DF400D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F6A33F7818AB855F00DF400D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +131,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F62BC4F1191E73D70040FD69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F62BC4F5191E73D70040FD69 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6A33F6F18AB855F00DF400D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,9 +176,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F62BC4F6191E73D70040FD69 /* Clr2Ase */ = {
+			isa = PBXGroup;
+			children = (
+				F62BC4F7191E73D70040FD69 /* main.m */,
+				F62BC4FB191E73D70040FD69 /* Clr2Ase.1 */,
+				F62BC4F9191E73D70040FD69 /* Supporting Files */,
+			);
+			path = Clr2Ase;
+			sourceTree = "<group>";
+		};
+		F62BC4F9191E73D70040FD69 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F62BC4FA191E73D70040FD69 /* Clr2Ase-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		F6A33F6918AB855F00DF400D = {
 			isa = PBXGroup;
 			children = (
+				F62BC4F6191E73D70040FD69 /* Clr2Ase */,
 				F6A33F7718AB855F00DF400D /* Ase2Clr */,
 				F6A33F9618ABCB1800DF400D /* SwatchInstall */,
 				F6A33FB418ABCB1900DF400D /* SwatchInstallTests */,
@@ -168,6 +214,7 @@
 				F6A33F8F18ABCB1800DF400D /* SwatchInstall.app */,
 				F6A33FAE18ABCB1900DF400D /* SwatchInstallTests.xctest */,
 				F6CAB2A01906A3CC00DA9745 /* Html2Clr */,
+				F62BC4F4191E73D70040FD69 /* Clr2Ase */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,6 +332,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F62BC4F3191E73D70040FD69 /* Clr2Ase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F62BC4FF191E73D70040FD69 /* Build configuration list for PBXNativeTarget "Clr2Ase" */;
+			buildPhases = (
+				F62BC4F0191E73D70040FD69 /* Sources */,
+				F62BC4F1191E73D70040FD69 /* Frameworks */,
+				F62BC4F2191E73D70040FD69 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Clr2Ase;
+			productName = Clr2Ase;
+			productReference = F62BC4F4191E73D70040FD69 /* Clr2Ase */;
+			productType = "com.apple.product-type.tool";
+		};
 		F6A33F7118AB855F00DF400D /* Ase2Clr */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6A33F8018AB855F00DF400D /* Build configuration list for PBXNativeTarget "Ase2Clr" */;
@@ -385,6 +449,7 @@
 				F6CAB29F1906A3CC00DA9745 /* Html2Clr */,
 				F6A33F8E18ABCB1800DF400D /* SwatchInstall */,
 				F6A33FAD18ABCB1800DF400D /* SwatchInstallTests */,
+				F62BC4F3191E73D70040FD69 /* Clr2Ase */,
 			);
 		};
 /* End PBXProject section */
@@ -412,6 +477,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F62BC4F0191E73D70040FD69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F62BC500191E845C0040FD69 /* RPCAdobeSwatchExchange.m in Sources */,
+				F62BC501191E845C0040FD69 /* NSData+Bigendian.m in Sources */,
+				F62BC4F8191E73D70040FD69 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6A33F6E18AB855F00DF400D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,6 +575,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F62BC4FD191E73D70040FD69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Clr2Ase/Clr2Ase-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F62BC4FE191E73D70040FD69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Clr2Ase/Clr2Ase-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		F6A33F7E18AB855F00DF400D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -685,6 +786,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F62BC4FF191E73D70040FD69 /* Build configuration list for PBXNativeTarget "Clr2Ase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F62BC4FD191E73D70040FD69 /* Debug */,
+				F62BC4FE191E73D70040FD69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F6A33F6D18AB855F00DF400D /* Build configuration list for PBXProject "Ase2Clr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

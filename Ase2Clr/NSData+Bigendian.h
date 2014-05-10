@@ -12,4 +12,6 @@
 - (UInt16) bigEndianUInt16;
 - (UInt32) bigEndianUInt32;
 - (Float32) bigEndianFloat32;
++ (NSData *) float32SwappedToNetwork: (Float32) f;
+
 @end

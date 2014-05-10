@@ -1,6 +1,6 @@
-# Ase2clr & SwatchInstall
+# Ase2clr, Clr2Ase & SwatchInstall
 
-Adobe Swatch Exchange import to Mac OS X CLR (ColorPicker Palette)
+Adobe Swatch Exchange import/export from/to Mac OS X CLR (ColorPicker Palette)
 
 ## SwatchInstall.app
 
@@ -28,6 +28,15 @@ Will produce ```Filename.clr``` in the same path.
 
 Will install the generated file in ~/Library/Colors. You might need to re-open the colorpicker for it to refresh the color lists.
 
+## Clr2Ase
+
+This tool allows you to read a Clr file or a named ColorPicker palette and export an ASE file that you can load in Adobe Suite.
+
+```
+	Clr2Ase "Name of color list"
+```
+
+Will produce ```Name of color list.ase```.
 
 ## Html2Clr
 

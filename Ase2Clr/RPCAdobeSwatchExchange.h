@@ -22,9 +22,19 @@
 @property(strong,nonatomic) NSArray *colorList;
 
 /**
- Read a ASE file contents and append to the current color list
- @param path the file path
+ * Read a ASE file contents and set to the current color list.
+ * @param path the file path
+ * @param colorListName name for the colorlist
+ * @return YES on success, NO on failure
  */
+
 - (BOOL) readFromFile:(NSString *)path toColorListNamed: (NSString *) colorListName;
-- (BOOL) writeToFile: (NSString *) path;
+
+/**
+ * Write the given color list to a ASE file
+ * @param colorList the color list to write
+ * @param path the output file name, including the .ase extension
+ * @return YES on success, NO on failure
+ */
++ (BOOL) writeColorList: (NSColorList *) colorList toFile: (NSString *) path;
 @end

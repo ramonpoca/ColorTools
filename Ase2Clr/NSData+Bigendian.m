@@ -36,4 +36,9 @@
     return CFConvertFloat32SwappedToHost(arg);
 }
 
++ (NSData *) float32SwappedToNetwork: (Float32) f {
+    CFSwappedFloat32 sf32 = CFConvertFloat32HostToSwapped(f);
+    return [NSData dataWithBytes:&(sf32.v) length:sizeof(uint32_t)];
+}
+
 @end

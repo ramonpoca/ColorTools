@@ -110,8 +110,89 @@
 }
 
 
-- (BOOL) writeToFile:(NSString *)path {
-    return NO;
++ (BOOL) writeColorList: (NSColorList *) colorList toFile:(NSString *)path {
+    if (colorList == nil)
+        return NO;
+    
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        NSLog(@"Error: Output file alredy exists at %@. Refusing to overwrite", path);
+        return NO;
+    }
+    
+    [[NSFileManager defaultManager] createFileAtPath:path contents:nil attributes:nil];
+    NSFileHandle *aseFileHandle = [NSFileHandle fileHandleForWritingAtPath:path];
+    if (!aseFileHandle) {
+        NSLog(@"Unable to create output file at %@", path);
+        return NO;
+    }
+    
+    [aseFileHandle writeData:[NSData dataWithBytes:"ASEF" length:4]]; //Header
+    [aseFileHandle writeData:[NSData dataWithBytes:"\x00\x01\x00\x00" length:4]]; // 1.0 version
+
+    NSArray *keys = [colorList allKeys];
+    // Blocks = begin group block + #colors + end block
+    uint32_t count = CFSwapInt32HostToBig((uint32_t) keys.count + 2);
+    [aseFileHandle writeData:[NSData dataWithBytes:&count length:4]];
+
+    u_char buf[1024];
+    NSUInteger len;
+
+    
+    
+    // ASE_GROUP_START (big endian)
+    [aseFileHandle writeData:[NSData dataWithBytes:"\xc0\x01" length:2]];
+    NSString *groupName = @"My Kuler Theme";
+    [groupName getBytes:buf maxLength:1024 usedLength:&len encoding:NSUTF16BigEndianStringEncoding options:0 range:NSMakeRange(0,groupName.length) remainingRange:NULL];
+    
+    // Block length: name len(2) + 2*len(name) + 0x0000(2)
+    uint32_t bigEndBlockLen = CFSwapInt32HostToBig((uint32_t) (2 + 2*groupName.length + 2));
+    [aseFileHandle writeData:[NSData dataWithBytes:&bigEndBlockLen length:4]];
+    
+    // String len (16bit) and name (utf-16 bigendian) + 2 (null)
+    uint16_t bigEndNameLen = CFSwapInt16HostToBig((uint16_t) len/2 + 1);
+    [aseFileHandle writeData:[NSData dataWithBytes:&bigEndNameLen length:2]];
+    // String and zero-pad
+    [aseFileHandle writeData:[NSData dataWithBytes:buf length:len]];
+    [aseFileHandle writeData:[NSData dataWithBytes:"\x00\x00" length:2]];
+
+    
+    for (NSString *key in keys) {
+        NSColor *color = [colorList colorWithKey:key];
+        CGFloat r,g,b,a;
+        
+        color = [color colorUsingColorSpace:[NSColorSpace sRGBColorSpace]];
+        [color getRed:&r green:&g blue:&b alpha:&a];
+        [key getBytes:buf maxLength:1024 usedLength:&len encoding:NSUTF16BigEndianStringEncoding options:0 range:NSMakeRange(0,key.length) remainingRange:NULL];
+        
+        // ASE_COLOR_ENTRY (big endian)
+        [aseFileHandle writeData:[NSData dataWithBytes:"\x00\x01" length:2]];
+
+        // Block length: name len(2) + 2*len(name) + 0x0000(2) + "RGB " + 3*4 (RGB 32-bit float) + 2 (type)
+        uint32_t bigEndBlockLen = CFSwapInt32HostToBig((uint32_t) (2 + 2*key.length + 2 + 4 + 3*4 + 2));
+        [aseFileHandle writeData:[NSData dataWithBytes:&bigEndBlockLen length:4]];
+ 
+        // String len (16bit) and name (utf-16 bigendian) + 2 (null)
+        uint16_t bigEndNameLen = CFSwapInt16HostToBig((uint16_t) len/2 + 1);
+        [aseFileHandle writeData:[NSData dataWithBytes:&bigEndNameLen length:2]];
+        // String and zero-pad
+        [aseFileHandle writeData:[NSData dataWithBytes:buf length:len]];
+        [aseFileHandle writeData:[NSData dataWithBytes:"\x00\x00" length:2]];
+        // Color model
+        [aseFileHandle writeData:[NSData dataWithBytes:"RGB " length:4]];
+        
+        [aseFileHandle writeData:[NSData float32SwappedToNetwork:(Float32)r]];
+        [aseFileHandle writeData:[NSData float32SwappedToNetwork:(Float32)g]];
+        [aseFileHandle writeData:[NSData float32SwappedToNetwork:(Float32)b]];
+        // Normal color
+        [aseFileHandle writeData:[NSData dataWithBytes:"\x00\x02" length:2]];
+    }
+    
+    // ASE_GROUP_END (big endian) + 4 x 0x00
+    [aseFileHandle writeData:[NSData dataWithBytes:"\xc0\x02\x00\x00\x00\x00" length:6]];
+    
+    [aseFileHandle closeFile];
+    return YES;
 }
 
 - (void)finalize {
