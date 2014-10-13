@@ -16,15 +16,11 @@ copy to your ~/Library/Colors directory and use from the standard ColorPicker (t
 
 Usage:
 
-```
     Ase2Clr FileName.ase
-```
 
 Will produce ```Filename.clr``` in the same path.
 
-```
-   Ase2Clr FileName.ase -i
-```
+    Ase2Clr FileName.ase -i
 
 Will install the generated file in ~/Library/Colors. You might need to re-open the colorpicker for it to refresh the color lists.
 
@@ -32,27 +28,40 @@ Will install the generated file in ~/Library/Colors. You might need to re-open t
 
 This tool allows you to read a Clr file or a named ColorPicker palette and export an ASE file that you can load in Adobe Suite.
 
-```
-	Clr2Ase "Name of color list"
-```
+	 Clr2Ase "Name of color list"
 
-Will produce ```Name of color list.ase```.
+Will produce ``Name of color list.ase``.
 
 ## Html2Clr
 
 This tool reads a file containing a list of hex-coded colors and outputs a .clr file for ColorPicker or installs the list in the system color picker as a new palette.
 
 The input format is #RRGGBB colors in separate lines:
-```
-#fa3ada
-#cada32
-...
-```
+
+    #fa3ada
+    #cada32
+    ...
+
 The usage is analog to Ase2Clr:
 
-```
    Html2Clr File.txt [-i]
-```
+
+## xibcolor
+
+This is a python script to search and replace colors inside xib/storyboard files (only xml format).
+
+*BEWARE*: This will overwrite the file! Back up your file first (or have it commited in version control).
+
+
+Usage:
+
+    xibcolor file [-l|replacements|["#fromcolor" "#tocolor"]]
+      file          a .storyboard or xib in new XML format
+      -l            list colors present in the file
+      replacements  a file consisting of pairs of hex-coded from->to colors
+      #color        a pair of colors to replace
+
+
 
 
 (c) Ramon Poca 2014. MIT Licensed.

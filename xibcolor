@@ -1,0 +1,88 @@
+#!/usr/bin/env python
+#
+# Storyboard/xib (xml based) search and replace colors
+#
+
+import sys
+from xml.dom.minidom import parse
+
+
+# <color key="titleColor" red="0.30196079609999998" green="0.30196079609999998" blue="0.30196079609999998" alpha="1" colorSpace="calibratedRGB"/>
+
+def clamp(x): 
+    return int(max(0, min(x, 255)))
+
+def rgbtohex(r, g, b):
+    return "#{0:02x}{1:02x}{2:02x}".format(clamp(255.0*r), clamp(255.0*g), clamp(255.0*b))
+
+def hextorgb(hx):
+  if hx[0] == '#':
+    hx = hx[1:]
+  return tuple(ord(c)/255.0 for c in hx.decode('hex'))
+
+def listcolors(dom):
+  allcolors = []
+  for node in dom.getElementsByTagName('color'):  # visit every node <bar />
+    colsp = node.getAttribute('colorSpace')
+    if colsp == 'calibratedRGB' or colsp == 'deviceRGB':
+      red = node.getAttribute('red')
+      green = node.getAttribute('green')
+      blue = node.getAttribute('blue')
+      hexv = rgbtohex(float(red), float(green), float(blue))
+      allcolors.append(hexv)
+  for col in set(allcolors):
+    print col
+
+def replacecolor(dom, fromcol, tocol):
+  (tor, tog, tob) = hextorgb(tocol)
+  for node in dom.getElementsByTagName('color'):  # visit every node <bar />
+    colsp = node.getAttribute('colorSpace')
+    if colsp == 'calibratedRGB' or colsp == 'deviceRGB':
+      red = node.getAttribute('red')
+      green = node.getAttribute('green')
+      blue = node.getAttribute('blue')
+      hexv = rgbtohex(float(red), float(green), float(blue))
+      if not fromcol:
+        print hexv
+      if fromcol and hexv == fromcol.lower():
+        node.setAttribute('red', str(tor))
+        node.setAttribute('green', str(tog))
+        node.setAttribute('blue', str(tob))
+
+def usage():
+  print "usage:"
+  print "xibcolor file [-l|replacements|[\"#fromcolor\" \"#tocolor\"]]"
+  print "file          a .storyboard or xib in new XML format"
+  print "-l            list colors present in the file"
+  print "replacements  a file consisting of pairs of hex-coded from->to colors"
+  print "#color        a pair of colors to replace" 
+  sys.exit(0)
+
+if len(sys.argv) == 2 and sys.argv[1] == '-h':
+  usage()
+
+dom = parse(sys.argv[1])
+
+if dom is None:
+  print "Cannot open %s" % sys.argv[1]
+  usage()
+
+if len(sys.argv) == 3 and sys.argv[2] == '-l':
+  listcolors(dom)
+elif len(sys.argv) == 3 and sys.argv[2] != '-l':
+  with open(sys.argv[2], 'r') as colors:
+    for line in colors:
+      (fcol,tocol,) = line.split()
+      replacecolor(dom, fcol, tocol)
+      with open(sys.argv[1], 'w') as ofile:
+        ofile.write(dom.toxml())
+elif len(sys.argv) == 4:
+  fromcol = sys.argv[2]
+  tocol = sys.argv[3]
+  print "From: %s to: %s" % (fromcol, tocol)
+  replacecolor(dom, fromcol, tocol)
+  with open('out.storyboard', 'w') as ofile:
+    ofile.write(dom.toxml())
+else:
+  usage()
+
