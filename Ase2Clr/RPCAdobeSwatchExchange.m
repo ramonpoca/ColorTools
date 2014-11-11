@@ -85,6 +85,7 @@
             color = [NSColor colorWithWhite:grey alpha:1.0];
         }
         UInt16 type = [[aseFileHandle readDataOfLength:2] bigEndianUInt16];
+        type=type;// Silence compiler warning
         if (name == nil || [name isEqualToString:@"\0"]) {
             NSColor *convertedColor=[color colorUsingColorSpaceName:NSDeviceRGBColorSpace];
 
