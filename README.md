@@ -44,7 +44,16 @@ The input format is #RRGGBB colors in separate lines:
 
 The usage is analog to Ase2Clr:
 
-   Html2Clr File.txt [-i]
+    Html2Clr File.txt [-i]
+
+## Clr2Obj
+
+This tool creates UIColor (iOS) categories from system colorlists (either installed or from a .clr file).
+Note that this tool is very basic. Duplication of methods is not checked, and only RGBA colors are generated.
+
+Usage:
+
+    Clr2Obj "Color List"|File.clr [CategoryName]
 
 ## xibcolor
 
@@ -60,7 +69,6 @@ Usage:
       -l            list colors present in the file
       replacements  a file consisting of pairs of hex-coded from->to colors
       #color        a pair of colors to replace
-
 
 
 
