@@ -12,6 +12,7 @@ cp LICENSE* build/Release/
 cp README.md build/Release/
 cp xibcolor build/Release/
 cp namethatcolor* build/Release/
+cp -r samples build/Release
 cd build/Release
 zip -9r "../../ColorTools-$1.zip" *
 
