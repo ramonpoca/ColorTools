@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Ase2Clr.xcodeproj">
+      location = "self:ColorTools.xcodeproj">
    </FileRef>
 </Workspace>
