@@ -1,6 +1,13 @@
-# Ase2clr, Clr2Ase & SwatchInstall
+# Mac OS X developer color tools
 
-Adobe Swatch Exchange import/export from/to Mac OS X CLR (ColorPicker Palette)
+Small tools to import and export colors from the Mac OS X ColorPicker palettes (.CLR).
+
+* Adobe Swatch Exchange (.ASE) import and export.
+* Hex color list to system palette.
+* Simple UIColor category generation from color lists.
+* Color search&replace from .xib/.storyboard
+
+You can find binaries of those tools in the [Releases](https://github.com/ramonpoca/ColorTools/releases) tab up there.
 
 ## SwatchInstall.app
 
