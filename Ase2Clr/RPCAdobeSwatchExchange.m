@@ -68,12 +68,13 @@
             CGFloat blue = [[aseFileHandle readDataOfLength:4] bigEndianFloat32];
             color = [NSColor colorWithRed:red green:green blue:blue alpha:1.0];
         } else if ([colorModel isEqualToString:@"CMYK"]) {
-            CGFloat components[4];
+            CGFloat components[5];
             components[0] = [[aseFileHandle readDataOfLength:4] bigEndianFloat32];
             components[1] = [[aseFileHandle readDataOfLength:4] bigEndianFloat32];
             components[2] = [[aseFileHandle readDataOfLength:4] bigEndianFloat32];
             components[3] = [[aseFileHandle readDataOfLength:4] bigEndianFloat32];
-            color = [NSColor colorWithColorSpace:[NSColorSpace genericCMYKColorSpace] components:components count:4];
+            components[4] = 1.0; // Alpha
+            color = [NSColor colorWithColorSpace:[NSColorSpace genericCMYKColorSpace] components:components count:5];
         } else if ([colorModel isEqualToString:@"LAB "]) {
             CGFloat components[3];
             components[0] = [[aseFileHandle readDataOfLength:4] bigEndianFloat32];
