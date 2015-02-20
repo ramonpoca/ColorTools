@@ -28,6 +28,7 @@
         NSString *word = comps[i];
         if ([[word stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""])
             continue;
+        word = [word stringByReplacingCharacterSet:[NSCharacterSet controlCharacterSet] withString:@""];
         word = [word stringByReplacingCharacterSet:[NSCharacterSet punctuationCharacterSet] withString:@""];
         if (i == 0) {
             result = [result stringByAppendingString:[word lowercaseString]];
