@@ -88,7 +88,7 @@ elif len(sys.argv) == 4:
   print "From: %s to: %s" % (fromcol, tocol)
   replacecolor(dom, fromcol, tocol)
   with open('out.storyboard', 'w') as ofile:
-    ofile.write(dom.toxml())
+    ofile.write(dom.toxml().encode('utf-8'))
 else:
   usage()
 
