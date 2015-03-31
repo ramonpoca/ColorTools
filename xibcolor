@@ -32,7 +32,7 @@ def listcolors(dom):
       green = node.getAttribute('green')
       blue = node.getAttribute('blue')
       alpha = node.getAttribute('alpha')
-      hexv = rgbatohex(float(red), float(green), float(blue), float(alpha))
+      hexv = argbtohex(float(red), float(green), float(blue), float(alpha))
       allcolors.append(hexv)
   for col in set(allcolors):
     print col
