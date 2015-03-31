@@ -12,13 +12,16 @@ from xml.dom.minidom import parse
 def clamp(x): 
     return int(max(0, min(x, 255)))
 
-def rgbatohex(r, g, b, a):
-  return "#{0:02x}{1:02x}{2:02x}{2:02x}".format(clamp(255.0*r), clamp(255.0*g), clamp(255.0*b), clamp(255.0*a))
+def argbtohex(a, r, g, b):
+  return "#{0:02x}{1:02x}{2:02x}{2:02x}".format(clamp(255.0*a), clamp(255.0*r), clamp(255.0*g), clamp(255.0*b))
 
-def hextorgb(hx):
+def hextoargb(hx):
   if hx[0] == '#':
     hx = hx[1:]
-  return tuple(ord(c)/255.0 for c in hx.decode('hex'))
+  result = tuple(ord(c)/255.0 for c in hx.decode('hex'))
+  if len(hx) == 6:
+    result = (1.0,) + result # Add alpha of 1.0 
+  return result
 
 def listcolors(dom):
   allcolors = []
@@ -35,12 +38,7 @@ def listcolors(dom):
     print col
 
 def replacecolor(dom, fromcol, tocol):
-  # Add alpha of 1.0
-  if len(tocol) < 8:
-    tocol = tocol + "ff"
-  if len(fromcol) < 8:
-    fromcol = fromcol + "ff"
-  (tor, tog, tob, toa) = hextorgb(tocol)
+  (toa, tor, tog, tob) = hextoargb(tocol)
   for node in dom.getElementsByTagName('color'):  # visit every node <bar />
     colsp = node.getAttribute('colorSpace')
     if colsp == 'calibratedRGB' or colsp == 'deviceRGB':
@@ -48,7 +46,7 @@ def replacecolor(dom, fromcol, tocol):
       green = node.getAttribute('green')
       blue = node.getAttribute('blue')
       alpha = node.getAttribute('alpha')
-      hexv = rgbatohex(float(red), float(green), float(blue), float(alpha))
+      hexv = argbtohex(float(alpha), float(red), float(green), float(blue)) 
       if not fromcol:
         print hexv
       if fromcol and hexv == fromcol.lower():
