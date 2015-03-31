@@ -12,8 +12,8 @@ from xml.dom.minidom import parse
 def clamp(x): 
     return int(max(0, min(x, 255)))
 
-def rgbtohex(r, g, b):
-    return "#{0:02x}{1:02x}{2:02x}".format(clamp(255.0*r), clamp(255.0*g), clamp(255.0*b))
+def rgbatohex(r, g, b, a):
+  return "#{0:02x}{1:02x}{2:02x}{2:02x}".format(clamp(255.0*r), clamp(255.0*g), clamp(255.0*b), clamp(255.0*a))
 
 def hextorgb(hx):
   if hx[0] == '#':
@@ -28,26 +28,34 @@ def listcolors(dom):
       red = node.getAttribute('red')
       green = node.getAttribute('green')
       blue = node.getAttribute('blue')
-      hexv = rgbtohex(float(red), float(green), float(blue))
+      alpha = node.getAttribute('alpha')
+      hexv = rgbatohex(float(red), float(green), float(blue), float(alpha))
       allcolors.append(hexv)
   for col in set(allcolors):
     print col
 
 def replacecolor(dom, fromcol, tocol):
-  (tor, tog, tob) = hextorgb(tocol)
+  # Add alpha of 1.0
+  if len(tocol) < 8:
+    tocol = tocol + "ff"
+  if len(fromcol) < 8:
+    fromcol = fromcol + "ff"
+  (tor, tog, tob, toa) = hextorgb(tocol)
   for node in dom.getElementsByTagName('color'):  # visit every node <bar />
     colsp = node.getAttribute('colorSpace')
     if colsp == 'calibratedRGB' or colsp == 'deviceRGB':
       red = node.getAttribute('red')
       green = node.getAttribute('green')
       blue = node.getAttribute('blue')
-      hexv = rgbtohex(float(red), float(green), float(blue))
+      alpha = node.getAttribute('alpha')
+      hexv = rgbatohex(float(red), float(green), float(blue), float(alpha))
       if not fromcol:
         print hexv
       if fromcol and hexv == fromcol.lower():
         node.setAttribute('red', str(tor))
         node.setAttribute('green', str(tog))
         node.setAttribute('blue', str(tob))
+        node.setAttribute('alpha', str(toa))
 
 def usage():
   print "usage:"
