@@ -13,7 +13,7 @@ def clamp(x):
     return int(max(0, min(x, 255)))
 
 def argbtohex(a, r, g, b):
-  return "#{0:02x}{1:02x}{2:02x}{2:02x}".format(clamp(255.0*a), clamp(255.0*r), clamp(255.0*g), clamp(255.0*b))
+  return "#{0:02x}{1:02x}{2:02x}{3:02x}".format(clamp(255.0*a), clamp(255.0*r), clamp(255.0*g), clamp(255.0*b))
 
 def hextoargb(hx):
   if hx[0] == '#':
