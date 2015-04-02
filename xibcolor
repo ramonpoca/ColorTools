@@ -10,7 +10,7 @@ from xml.dom.minidom import parse
 # <color key="titleColor" red="0.30196079609999998" green="0.30196079609999998" blue="0.30196079609999998" alpha="1" colorSpace="calibratedRGB"/>
 
 def clamp(x): 
-    return int(max(0, min(x, 255)))
+    return max(0, min(int(round(x)), 255))
 
 def argbtohex(a, r, g, b):
   return "#{0:02x}{1:02x}{2:02x}{3:02x}".format(clamp(255.0*a), clamp(255.0*r), clamp(255.0*g), clamp(255.0*b))
@@ -50,6 +50,7 @@ def replacecolor(dom, fromcol, tocol):
       if not fromcol:
         print hexv
       if fromcol and hexv == fromcol.lower():
+	print "coucou"
         node.setAttribute('red', str(tor))
         node.setAttribute('green', str(tog))
         node.setAttribute('blue', str(tob))
@@ -81,7 +82,7 @@ elif len(sys.argv) == 3 and sys.argv[2] != '-l':
       (fcol,tocol,) = line.split()
       replacecolor(dom, fcol, tocol)
       with open(sys.argv[1], 'w') as ofile:
-        ofile.write(dom.toxml())
+        ofile.write(dom.toxml().encode('utf-8'))
 elif len(sys.argv) == 4:
   fromcol = sys.argv[2]
   tocol = sys.argv[3]
