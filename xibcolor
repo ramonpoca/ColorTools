@@ -54,6 +54,8 @@ def replacecolor(dom, fromcol, tocol):
         node.setAttribute('green', str(tog))
         node.setAttribute('blue', str(tob))
         node.setAttribute('alpha', str(toa))
+	return True
+  return False
 
 def usage():
   print "usage:"
@@ -67,28 +69,36 @@ def usage():
 if len(sys.argv) == 2 and sys.argv[1] == '-h':
   usage()
 
-dom = parse(sys.argv[1])
+xibOrStoryboard = sys.argv[1]
+
+dom = parse(xibOrStoryboard)
 
 if dom is None:
-  print "Cannot open %s" % sys.argv[1]
+  print "Cannot open %s" % xibOrStoryboard
   usage()
 
 if len(sys.argv) == 3 and sys.argv[2] == '-l':
   listcolors(dom)
 elif len(sys.argv) == 3 and sys.argv[2] != '-l':
   with open(sys.argv[2], 'r') as colors:
+    countOfReplacements = 0
     for line in colors:
-      (fcol,tocol,) = line.split()
-      replacecolor(dom, fcol, tocol)
+      if len(line) > 0:
+        (fcol,tocol,) = line.split()
+	countOfReplacements += replacecolor(dom, fcol, tocol)
+    if countOfReplacements > 0:
       with open(sys.argv[1], 'w') as ofile:
         ofile.write(dom.toxml().encode('utf-8'))
+      print "%d colors replaced in %s" % (countOfReplacements, xibOrStoryboard)
+    else:
+      print "No colors were replaced in %s" % xibOrStoryboard
 elif len(sys.argv) == 4:
   fromcol = sys.argv[2]
   tocol = sys.argv[3]
   print "From: %s to: %s" % (fromcol, tocol)
-  replacecolor(dom, fromcol, tocol)
-  with open('out.storyboard', 'w') as ofile:
-    ofile.write(dom.toxml().encode('utf-8'))
+  if replacecolor(dom, fromcol, tocol): 
+    with open('out.storyboard', 'w') as ofile:
+      ofile.write(dom.toxml().encode('utf-8'))
 else:
   usage()
 
