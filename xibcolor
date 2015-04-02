@@ -50,7 +50,6 @@ def replacecolor(dom, fromcol, tocol):
       if not fromcol:
         print hexv
       if fromcol and hexv == fromcol.lower():
-	print "coucou"
         node.setAttribute('red', str(tor))
         node.setAttribute('green', str(tog))
         node.setAttribute('blue', str(tob))
