@@ -10,7 +10,7 @@ from xml.dom.minidom import parse
 # <color key="titleColor" red="0.30196079609999998" green="0.30196079609999998" blue="0.30196079609999998" alpha="1" colorSpace="calibratedRGB"/>
 
 def clamp(x): 
-    return int(max(0, min(x, 255)))
+    return max(0, min(int(round(x)), 255))
 
 def argbtohex(a, r, g, b):
   return "#{0:02x}{1:02x}{2:02x}{3:02x}".format(clamp(255.0*a), clamp(255.0*r), clamp(255.0*g), clamp(255.0*b))
@@ -54,6 +54,8 @@ def replacecolor(dom, fromcol, tocol):
         node.setAttribute('green', str(tog))
         node.setAttribute('blue', str(tob))
         node.setAttribute('alpha', str(toa))
+	return True
+  return False
 
 def usage():
   print "usage:"
@@ -70,28 +72,36 @@ if len(sys.argv) == 1:
 if len(sys.argv) == 2 and sys.argv[1] == '-h':
   usage()
 
-dom = parse(sys.argv[1])
+xibOrStoryboard = sys.argv[1]
+
+dom = parse(xibOrStoryboard)
 
 if dom is None:
-  print "Cannot open %s" % sys.argv[1]
+  print "Cannot open %s" % xibOrStoryboard
   usage()
 
 if len(sys.argv) == 3 and sys.argv[2] == '-l':
   listcolors(dom)
 elif len(sys.argv) == 3 and sys.argv[2] != '-l':
   with open(sys.argv[2], 'r') as colors:
+    countOfReplacements = 0
     for line in colors:
-      (fcol,tocol,) = line.split()
-      replacecolor(dom, fcol, tocol)
+      if len(line) > 0:
+        (fcol,tocol,) = line.split()
+	countOfReplacements += replacecolor(dom, fcol, tocol)
+    if countOfReplacements > 0:
       with open(sys.argv[1], 'w') as ofile:
-        ofile.write(dom.toxml())
+        ofile.write(dom.toxml().encode('utf-8'))
+      print "%d colors replaced in %s" % (countOfReplacements, xibOrStoryboard)
+    else:
+      print "No colors were replaced in %s" % xibOrStoryboard
 elif len(sys.argv) == 4:
   fromcol = sys.argv[2]
   tocol = sys.argv[3]
   print "From: %s to: %s" % (fromcol, tocol)
-  replacecolor(dom, fromcol, tocol)
-  with open('out.storyboard', 'w') as ofile:
-    ofile.write(dom.toxml().encode('utf-8'))
+  if replacecolor(dom, fromcol, tocol): 
+    with open('out.storyboard', 'w') as ofile:
+      ofile.write(dom.toxml().encode('utf-8'))
 else:
   usage()
 

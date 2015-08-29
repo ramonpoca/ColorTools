@@ -58,15 +58,16 @@ int main(int argc, const char *argv[]) {
 
         if (error) {
             NSLog(@"Cannot load UIColorCategory.template, will use default. Error: %@", error);
-            template = @"#import \"%CATEGORYHEADER%@\"\n\n@implementation %CATEGORY% (UIColor)\n%COLORLIST%\n@end";
+            template = @"#import \"%CATEGORYHEADER%\"\n\n@implementation UIColor (%CATEGORY%)\n%COLORLIST%\n@end";
         }
+        template = [template stringByReplacingOccurrencesOfString:@"%CATEGORYHEADER%" withString:categoryHeaderFileName];
 
         error = nil;
         NSString *headerTemplate = [NSString stringWithContentsOfFile:@"UIColorCategoryHeader.template" encoding:NSUTF8StringEncoding error:&error];
 
         if (error) {
             NSLog(@"Cannot load UIColorCategoryHeader.template, will use default. Error: %@", error);
-            headerTemplate = @"#import <UIKit/UIKit.h>\n@interface %CATEGORY% (UIColor)\n%COLORLIST%\n@end";
+            headerTemplate = @"#import <UIKit/UIKit.h>\n@interface UIColor (%CATEGORY%)\n%COLORLIST%\n@end";
         }
 
         template = [template stringByReplacingOccurrencesOfString:@"%CATEGORY%" withString:categoryName];
@@ -91,10 +92,10 @@ int main(int argc, const char *argv[]) {
         NSString *declarationFileContents = [headerTemplate stringByReplacingOccurrencesOfString:@"%COLORLIST%" withString:allDeclarations];
         NSLog(@"Will output to: %@/%@", categoryHeaderFileName, categoryImplementationFileName);
 
-        if (![definitionFileContents writeToFile:categoryHeaderFileName atomically:YES encoding:NSUTF8StringEncoding error:&error]) {
+        if (![declarationFileContents writeToFile:categoryHeaderFileName atomically:YES encoding:NSUTF8StringEncoding error:&error]) {
             NSLog(@"Failed to write definition file: %@", error);
         }
-        if (![declarationFileContents writeToFile:categoryImplementationFileName atomically:YES encoding:NSUTF8StringEncoding error:&error]) {
+        if (![definitionFileContents writeToFile:categoryImplementationFileName atomically:YES encoding:NSUTF8StringEncoding error:&error]) {
             NSLog(@"Failed to write declaration file: %@", error);
         }
 
