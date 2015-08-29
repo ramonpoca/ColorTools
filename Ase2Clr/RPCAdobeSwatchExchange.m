@@ -144,7 +144,12 @@
     
     // ASE_GROUP_START (big endian)
     [aseFileHandle writeData:[NSData dataWithBytes:"\xc0\x01" length:2]];
-    NSString *groupName = @"My Kuler Theme";
+    NSString *groupName = @"Imported Mac Colorlist";
+    
+    if (colorList.name) {
+        groupName = colorList.name;
+    }
+    
     [groupName getBytes:buf maxLength:1024 usedLength:&len encoding:NSUTF16BigEndianStringEncoding options:0 range:NSMakeRange(0,groupName.length) remainingRange:NULL];
     
     // Block length: name len(2) + 2*len(name) + 0x0000(2)
