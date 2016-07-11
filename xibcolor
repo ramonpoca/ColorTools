@@ -38,6 +38,7 @@ def listcolors(dom):
     print col
 
 def replacecolor(dom, fromcol, tocol):
+  didreplace = False
   (toa, tor, tog, tob) = hextoargb(tocol)
   for node in dom.getElementsByTagName('color'):  # visit every node <bar />
     colsp = node.getAttribute('colorSpace')
@@ -54,8 +55,8 @@ def replacecolor(dom, fromcol, tocol):
         node.setAttribute('green', str(tog))
         node.setAttribute('blue', str(tob))
         node.setAttribute('alpha', str(toa))
-	return True
-  return False
+        didreplace = True
+  return didreplace
 
 def usage():
   print "usage:"
