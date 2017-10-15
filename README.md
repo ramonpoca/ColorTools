@@ -43,10 +43,11 @@ Will produce ``Name of color list.ase``.
 
 This tool reads a file containing a list of hex-coded colors and outputs a .clr file for ColorPicker or installs the list in the system color picker as a new palette.
 
-The input format is #RRGGBB colors in separate lines:
+The input format is #RRGGBB colors followed by their names, separated by a space, in separate lines:
 
-    #fa3ada
-    #cada32
+    #fa3ada Almost-Magenta
+    #cada32 Green-Mustard
+    #ff6347 Tomato
     ...
 
 The usage is analog to Ase2Clr:
