@@ -18,7 +18,7 @@ int main(int argc, const char * argv[])
         NSString *file = @"";
         BOOL install = NO;
         if (argc < 2) {
-            NSLog(@"Usage: ase2clr filename.ase [-i]");
+            NSLog(@"Usage: Html2Clr filename.txt [-i]");
             exit(-1);
         }
         if (argc > 1) {
