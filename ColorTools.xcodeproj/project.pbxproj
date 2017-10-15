@@ -13,6 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				F69E1A521B0F713C006F3EBC /* PBXTargetDependency */,
 				F6A071241A125AF700CDFFD0 /* PBXTargetDependency */,
 				F6A071261A125AF700CDFFD0 /* PBXTargetDependency */,
 				F6A071281A125AF700CDFFD0 /* PBXTargetDependency */,
@@ -30,6 +31,12 @@
 		F62BC4FC191E73D70040FD69 /* Clr2Ase.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F62BC4FB191E73D70040FD69 /* Clr2Ase.1 */; };
 		F62BC500191E845C0040FD69 /* RPCAdobeSwatchExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8418AB85A000DF400D /* RPCAdobeSwatchExchange.m */; };
 		F62BC501191E845C0040FD69 /* NSData+Bigendian.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8718AB8FE300DF400D /* NSData+Bigendian.m */; };
+		F69E1A481B0F700B006F3EBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F69E1A471B0F700B006F3EBC /* main.m */; };
+		F69E1A4C1B0F7124006F3EBC /* RPCAdobeSwatchExchange.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8418AB85A000DF400D /* RPCAdobeSwatchExchange.m */; };
+		F69E1A4D1B0F7124006F3EBC /* NSData+Bigendian.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F8718AB8FE300DF400D /* NSData+Bigendian.m */; };
+		F69E1A4E1B0F7124006F3EBC /* NSString+CamelCaser.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B9EC3E19A6239400C61B45 /* NSString+CamelCaser.m */; };
+		F69E1A4F1B0F7124006F3EBC /* RPCHexColorList.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CAB2AF1906A45600DA9745 /* RPCHexColorList.m */; };
+		F69E1A501B0F7124006F3EBC /* NSColor+Hexadecimal.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CAB2B21906A7FF00DA9745 /* NSColor+Hexadecimal.m */; };
 		F6A33F7618AB855F00DF400D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A33F7518AB855F00DF400D /* Foundation.framework */; };
 		F6A33F7918AB855F00DF400D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A33F7818AB855F00DF400D /* main.m */; };
 		F6A33F7D18AB855F00DF400D /* Ase2Clr.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F6A33F7C18AB855F00DF400D /* Ase2Clr.1 */; };
@@ -60,6 +67,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F69E1A511B0F713C006F3EBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6A33F6A18AB855F00DF400D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F69E1A441B0F700B006F3EBC;
+			remoteInfo = Html2Ase;
+		};
 		F6A071231A125AF700CDFFD0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F6A33F6A18AB855F00DF400D /* Project object */;
@@ -108,6 +122,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		F69E1A431B0F700B006F3EBC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		F6A33F7018AB855F00DF400D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +168,8 @@
 		F62BC4F7191E73D70040FD69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F62BC4FA191E73D70040FD69 /* Clr2Ase-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Clr2Ase-Prefix.pch"; sourceTree = "<group>"; };
 		F62BC4FB191E73D70040FD69 /* Clr2Ase.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Clr2Ase.1; sourceTree = "<group>"; };
+		F69E1A451B0F700B006F3EBC /* Html2Ase */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Html2Ase; sourceTree = BUILT_PRODUCTS_DIR; };
+		F69E1A471B0F700B006F3EBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F6A33F7218AB855F00DF400D /* Ase2Clr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Ase2Clr; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A33F7518AB855F00DF400D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F6A33F7818AB855F00DF400D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -194,6 +219,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F62BC4F5191E73D70040FD69 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F69E1A421B0F700B006F3EBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +283,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F69E1A461B0F700B006F3EBC /* Html2Ase */ = {
+			isa = PBXGroup;
+			children = (
+				F69E1A471B0F700B006F3EBC /* main.m */,
+			);
+			path = Html2Ase;
+			sourceTree = "<group>";
+		};
 		F6A0712D1A125B7700CDFFD0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +317,7 @@
 				F6A33F9618ABCB1800DF400D /* SwatchInstall */,
 				F6CAB2A21906A3CC00DA9745 /* Html2Clr */,
 				F6B9EC3319A6200B00C61B45 /* Clr2Obj */,
+				F69E1A461B0F700B006F3EBC /* Html2Ase */,
 				F6A33F7418AB855F00DF400D /* Frameworks */,
 				F6A33F7318AB855F00DF400D /* Products */,
 			);
@@ -290,6 +331,7 @@
 				F6CAB2A01906A3CC00DA9745 /* Html2Clr */,
 				F62BC4F4191E73D70040FD69 /* Clr2Ase */,
 				F6B9EC3119A6200B00C61B45 /* Clr2Obj */,
+				F69E1A451B0F700B006F3EBC /* Html2Ase */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -416,6 +458,23 @@
 			productReference = F62BC4F4191E73D70040FD69 /* Clr2Ase */;
 			productType = "com.apple.product-type.tool";
 		};
+		F69E1A441B0F700B006F3EBC /* Html2Ase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F69E1A4B1B0F700C006F3EBC /* Build configuration list for PBXNativeTarget "Html2Ase" */;
+			buildPhases = (
+				F69E1A411B0F700B006F3EBC /* Sources */,
+				F69E1A421B0F700B006F3EBC /* Frameworks */,
+				F69E1A431B0F700B006F3EBC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Html2Ase;
+			productName = Html2Ase;
+			productReference = F69E1A451B0F700B006F3EBC /* Html2Ase */;
+			productType = "com.apple.product-type.tool";
+		};
 		F6A33F7118AB855F00DF400D /* Ase2Clr */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6A33F8018AB855F00DF400D /* Build configuration list for PBXNativeTarget "Ase2Clr" */;
@@ -490,9 +549,12 @@
 		F6A33F6A18AB855F00DF400D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Ramon Poca";
 				TargetAttributes = {
+					F69E1A441B0F700B006F3EBC = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 					F6A0711F1A125ADE00CDFFD0 = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -517,6 +579,7 @@
 				F6A33F8E18ABCB1800DF400D /* SwatchInstall */,
 				F62BC4F3191E73D70040FD69 /* Clr2Ase */,
 				F6B9EC3019A6200B00C61B45 /* Clr2Obj */,
+				F69E1A441B0F700B006F3EBC /* Html2Ase */,
 			);
 		};
 /* End PBXProject section */
@@ -543,6 +606,19 @@
 				F62BC500191E845C0040FD69 /* RPCAdobeSwatchExchange.m in Sources */,
 				F62BC501191E845C0040FD69 /* NSData+Bigendian.m in Sources */,
 				F62BC4F8191E73D70040FD69 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F69E1A411B0F700B006F3EBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F69E1A4C1B0F7124006F3EBC /* RPCAdobeSwatchExchange.m in Sources */,
+				F69E1A4D1B0F7124006F3EBC /* NSData+Bigendian.m in Sources */,
+				F69E1A4E1B0F7124006F3EBC /* NSString+CamelCaser.m in Sources */,
+				F69E1A4F1B0F7124006F3EBC /* RPCHexColorList.m in Sources */,
+				F69E1A501B0F7124006F3EBC /* NSColor+Hexadecimal.m in Sources */,
+				F69E1A481B0F700B006F3EBC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +668,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F69E1A521B0F713C006F3EBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F69E1A441B0F700B006F3EBC /* Html2Ase */;
+			targetProxy = F69E1A511B0F713C006F3EBC /* PBXContainerItemProxy */;
+		};
 		F6A071241A125AF700CDFFD0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F6A33F7118AB855F00DF400D /* Ase2Clr */;
@@ -673,6 +754,40 @@
 			};
 			name = Release;
 		};
+		F69E1A491B0F700C006F3EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F69E1A4A1B0F700C006F3EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		F6A071201A125ADF00CDFFD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -694,18 +809,30 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -731,19 +858,30 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -785,6 +923,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "SwatchInstall/SwatchInstall-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ramonpoca.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -798,6 +937,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SwatchInstall/SwatchInstall-Prefix.pch";
 				INFOPLIST_FILE = "SwatchInstall/SwatchInstall-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ramonpoca.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -867,6 +1007,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F69E1A4B1B0F700C006F3EBC /* Build configuration list for PBXNativeTarget "Html2Ase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F69E1A491B0F700C006F3EBC /* Debug */,
+				F69E1A4A1B0F700C006F3EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F6A071221A125ADF00CDFFD0 /* Build configuration list for PBXAggregateTarget "ColorTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -874,6 +1023,7 @@
 				F6A071211A125ADF00CDFFD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6A33F6D18AB855F00DF400D /* Build configuration list for PBXProject "ColorTools" */ = {
 			isa = XCConfigurationList;

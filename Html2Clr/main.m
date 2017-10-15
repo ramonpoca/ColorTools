@@ -18,14 +18,14 @@ int main(int argc, const char * argv[])
         NSString *file = @"";
         BOOL install = NO;
         if (argc < 2) {
-            NSLog(@"Usage: Html2Clr filename.txt [-i]");
+            NSLog(@"Usage: html2clr filename.txt [-i]");
             exit(-1);
         }
         if (argc > 1) {
             file = [NSString stringWithCString:argv[1] encoding:NSUTF8StringEncoding];
             NSFileManager *fm = [NSFileManager defaultManager];
             if (![fm fileExistsAtPath:file]) {
-                NSLog(@"ASE File not found at: %@", file);
+                NSLog(@"Hex File not found at: %@", file);
                 exit(-1);
             }
         }
