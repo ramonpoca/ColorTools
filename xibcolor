@@ -52,6 +52,13 @@ def listcolors(dom):
         print "White: " + white
       hexv = argbtohex(float(alpha), float(white), float(white), float(white))
       allcolors.append(hexv)
+    elif colsp == "custom" and customColorSpace == "calibratedWhite":
+      alpha = node.getAttribute('alpha')
+      white = node.getAttribute('white')
+      if debugMode:
+        print "White: " + white
+      hexv = argbtohex(float(alpha), float(white), float(white), float(white))
+      allcolors.append(hexv)
     elif colsp == "custom" and customColorSpace == "sRGB":
       red = node.getAttribute('red')
       green = node.getAttribute('green')
@@ -68,7 +75,7 @@ def listcolors(dom):
       if debugMode:
         print "colorSpace: " + colsp
         print "colorSpace: " + customColorSpace
-        print "keys: " + node.attributes.keys()
+        print "keys: " + ", ".join(node.attributes.keys())
   if debugMode:
     print "---- [Extracted Colors]"
   for col in set(allcolors):
