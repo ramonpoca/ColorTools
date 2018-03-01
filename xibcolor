@@ -10,7 +10,7 @@ from xml.dom.minidom import parse
 # <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 # <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 
-debugMode = True
+debugMode = False
 
 def clamp(x): 
     return max(0, min(int(round(x)), 255))
