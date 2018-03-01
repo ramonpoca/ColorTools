@@ -6,8 +6,11 @@
 import sys
 from xml.dom.minidom import parse
 
-
 # <color key="titleColor" red="0.30196079609999998" green="0.30196079609999998" blue="0.30196079609999998" alpha="1" colorSpace="calibratedRGB"/>
+# <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+# <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+
+debugMode = False
 
 def clamp(x): 
     return max(0, min(int(round(x)), 255))
@@ -27,15 +30,59 @@ def listcolors(dom):
   allcolors = []
   for node in dom.getElementsByTagName('color'):  # visit every node <bar />
     colsp = node.getAttribute('colorSpace')
+    customColorSpace = node.getAttribute('customColorSpace')
+    if debugMode:
+      print "---- [Debug]"
     if colsp == 'calibratedRGB' or colsp == 'deviceRGB':
       red = node.getAttribute('red')
       green = node.getAttribute('green')
       blue = node.getAttribute('blue')
       alpha = node.getAttribute('alpha')
+      if debugMode:
+        print "Red: " + red
+        print "Green: " + green
+        print "Blue: " + blue
+        print "Alpha: " + alpha
       hexv = argbtohex(float(alpha), float(red), float(green), float(blue))
       allcolors.append(hexv)
+    elif colsp == "calibratedWhite":
+      alpha = node.getAttribute('alpha')
+      white = node.getAttribute('white')
+      if debugMode:
+        print "White: " + white
+      hexv = argbtohex(float(alpha), float(white), float(white), float(white))
+      allcolors.append(hexv)
+    elif colsp == "custom" and customColorSpace == "calibratedWhite":
+      alpha = node.getAttribute('alpha')
+      white = node.getAttribute('white')
+      if debugMode:
+        print "White: " + white
+      hexv = argbtohex(float(alpha), float(white), float(white), float(white))
+      allcolors.append(hexv)
+    elif colsp == "custom" and customColorSpace == "sRGB":
+      red = node.getAttribute('red')
+      green = node.getAttribute('green')
+      blue = node.getAttribute('blue')
+      alpha = node.getAttribute('alpha')
+      if debugMode:
+        print "Red: " + red
+        print "Green: " + green
+        print "Blue: " + blue
+        print "Alpha: " + alpha
+      hexv = argbtohex(float(alpha), float(red), float(green), float(blue))
+      allcolors.append(hexv)
+    else:
+      if debugMode:
+        print "colorSpace: " + colsp
+        print "colorSpace: " + customColorSpace
+        print "keys: " + ", ".join(node.attributes.keys())
+  if debugMode:
+    print "---- [Extracted Colors]"
   for col in set(allcolors):
     print col
+  if debugMode:
+    print "----"
+  return allcolors
 
 def replacecolor(dom, fromcol, tocol):
   didreplace = False
@@ -58,11 +105,30 @@ def replacecolor(dom, fromcol, tocol):
         didreplace = True
   return didreplace
 
+
+def generateAllColors(inputFile, outputFile):
+  with open(inputFile) as f:
+    content = f.readlines()
+  cleanedContent = [x.strip() for x in content]
+  # print cleanedContent
+  outputColors = []
+  for aFile in cleanedContent:
+    dom = parse(aFile)
+    if dom is None:
+      print "Cannot open %s" % xibOrStoryboard
+      sys.exit()
+    outputColors.extend(listcolors(dom))
+  outputFileHandler = open(outputFile, 'w')
+  for line in set(outputColors):
+    outputFileHandler.write("%s\n" % line)
+
+
 def usage():
   print "usage:"
-  print "xibcolor file [-l|replacements|[\"#fromcolor\" \"#tocolor\"]]"
+  print "xibcolor file [-l | replacements | [\"#fromcolor\" \"#tocolor\"] | -j filelist.txt output.txt]"
   print "file          a .storyboard or xib in new XML format"
   print "-l            list colors present in the file"
+  print "-j            export all the colors find in the xibs and storyboard from the filelist et into a single file"
   print "replacements  a file consisting of pairs of hex-coded from->to colors"
   print "#color        a pair of colors to replace" 
   sys.exit(0)
@@ -73,36 +139,40 @@ if len(sys.argv) == 1:
 if len(sys.argv) == 2 and sys.argv[1] == '-h':
   usage()
 
-xibOrStoryboard = sys.argv[1]
-
-dom = parse(xibOrStoryboard)
-
-if dom is None:
-  print "Cannot open %s" % xibOrStoryboard
-  usage()
-
-if len(sys.argv) == 3 and sys.argv[2] == '-l':
-  listcolors(dom)
-elif len(sys.argv) == 3 and sys.argv[2] != '-l':
-  with open(sys.argv[2], 'r') as colors:
-    countOfReplacements = 0
-    for line in colors:
-      if len(line) > 0:
-        (fcol,tocol,) = line.split()
-	countOfReplacements += replacecolor(dom, fcol, tocol)
-    if countOfReplacements > 0:
-      with open(sys.argv[1], 'w') as ofile:
-        ofile.write(dom.toxml().encode('utf-8'))
-      print "%d colors replaced in %s" % (countOfReplacements, xibOrStoryboard)
-    else:
-      print "No colors were replaced in %s" % xibOrStoryboard
-elif len(sys.argv) == 4:
-  fromcol = sys.argv[2]
-  tocol = sys.argv[3]
-  print "From: %s to: %s" % (fromcol, tocol)
-  if replacecolor(dom, fromcol, tocol): 
-    with open('out.storyboard', 'w') as ofile:
-      ofile.write(dom.toxml().encode('utf-8'))
+if len(sys.argv) == 4 and sys.argv[1] == '-j':
+  generateAllColors(sys.argv[2], sys.argv[3])
 else:
-  usage()
+  xibOrStoryboard = sys.argv[1]
+  if debugMode:
+    print "Filename: " + xibOrStoryboard
+    
+  dom = parse(xibOrStoryboard)
+  if dom is None:
+    print "Cannot open %s" % xibOrStoryboard
+    usage()
 
+  if len(sys.argv) == 3 and sys.argv[2] == '-l':
+    listcolors(dom)
+  elif len(sys.argv) == 3 and sys.argv[2] != '-l':
+    with open(sys.argv[2], 'r') as colors:
+      countOfReplacements = 0
+      for line in colors:
+        if len(line) > 0:
+          (fcol,tocol,) = line.split()
+      countOfReplacements += replacecolor(dom, fcol, tocol)
+      if countOfReplacements > 0:
+        with open(sys.argv[1], 'w') as ofile:
+          ofile.write(dom.toxml().encode('utf-8'))
+        print "%d colors replaced in %s" % (countOfReplacements, xibOrStoryboard)
+      else:
+        print "No colors were replaced in %s" % xibOrStoryboard
+  elif len(sys.argv) == 4:
+    fromcol = sys.argv[2]
+    tocol = sys.argv[3]
+    print "From: %s to: %s" % (fromcol, tocol)
+    if replacecolor(dom, fromcol, tocol):
+      with open('out.storyboard', 'w') as ofile:
+        ofile.write(dom.toxml().encode('utf-8'))
+  else:
+    usage()
+ 
