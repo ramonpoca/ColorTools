@@ -6,8 +6,8 @@ Attribution 2.5 http://creativecommons.org/licenses/by/2.5/
 
 # DIC Color Guide (Chinese and Japanese Traditional Colors)
 
-`DIC_China.ase` and `DIC_Japan.ase` are created by Chun Tian,
-based on the DIC Digital Color Guide (iOS app)
+`DIC_Chinese.ase|clr` and `DIC_Japanese.ase|clr` are created by Chun Tian,
+based on DIC Digital Color Guide (iOS app).
 
 Released under the Creative Commons Attribution 4.0 International
 Public License (CC BY 4.0) https://creativecommons.org/licenses/by/4.0/
