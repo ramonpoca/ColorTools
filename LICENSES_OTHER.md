@@ -4,10 +4,10 @@ Created by Chirag Mehta - http://chir.ag/projects/ntc       |
 Released under the: Creative Commons License:
 Attribution 2.5 http://creativecommons.org/licenses/by/2.5/
 
-# DIC Color Guide (Chinese and Japanese Traditional Colors)
+# DIC Color Guide 2.0 (Traditional Colours of Japan, France and China)
 
-`DIC_Chinese.ase|clr` and `DIC_Japanese.ase|clr` are created by Chun Tian,
-based on DIC Digital Color Guide (iOS app).
+The files `DIC_Japan.clr`, `DIC_France.clr` and `DIC_China.clr` are created by Chun Tian,
+based on the DIC Digital Color Guide (iOS app).
 
 Released under the Creative Commons Attribution 4.0 International
 Public License (CC BY 4.0) https://creativecommons.org/licenses/by/4.0/
