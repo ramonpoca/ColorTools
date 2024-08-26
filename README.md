@@ -1,3 +1,7 @@
+# Archived
+
+I'm no longer working on OS X/iOS world. Feel free to fork if this is useful to you.
+
 # Mac OS X developer color tools
 
 Small tools to import and export colors from the Mac OS X ColorPicker palettes (.CLR).
